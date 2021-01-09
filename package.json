@@ -24,8 +24,7 @@
     "webpack-cli": "^4.3.1",
     "webpack-dev-server": "^4.0.0-beta.0"
   },
-  "description": "",
-  "main": "",
+  "description": "An example of how to use hot module replacement with a PHP backend. It also supports React with the React Refresh Webpack Plugin.",
   "repository": "https://github.com/dirkjf/php-hmr",
   "author": "Dirk Faber <d.j.faber@outlook.com>",
   "license": "MIT",
