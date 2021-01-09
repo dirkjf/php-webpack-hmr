@@ -28,8 +28,8 @@
     "webpack-cli": "^4.3.1",
     "webpack-dev-server": "^4.0.0-beta.0"
   },
-  "description": "theme for photography website",
-  "main": "index.js",
+  "description": "",
+  "main": "",
   "repository": "https://github.com/dirkjf/php-hmr",
   "author": "Dirk Faber <d.j.faber@outlook.com>",
   "license": "MIT",

@@ -1,11 +1,11 @@
 import * as React from 'react';
-import ClassDefault from './ClassDefault';
+import Example from './Example';
 
 function App() {
   return (
-    <div>
-      <ClassDefault />
-    </div>
+    <>
+      <Example />
+    </>
   );
 }
 

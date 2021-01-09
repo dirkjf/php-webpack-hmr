@@ -7,8 +7,12 @@ const devUrl = 'http://localhost:8888/' // This must be the same as your site's 
 module.exports = {
   mode: 'development',
   entry: {
-    'regular': "./assets/regular/index.js",
-    // 'react': "./assets/react/index.js"
+    'vanilla-example': "./assets/vanilla-example/index.js",
+    'react-example': "./assets/react-example/index.js"
+  },
+  optimization: {
+    runtimeChunk: "single"
+        // { name: entrypoint => `runtime~${entrypoint.name}`}
   },
   output: {
     path: path.resolve(__dirname, "dist"),
