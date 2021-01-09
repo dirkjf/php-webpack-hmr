@@ -2,8 +2,7 @@
   "name": "php-hmr",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.dev.js",
-    "build": "webpack --config webpack/webpack.config.prod.js"
+    "start": "webpack-dev-server --config webpack.config.dev.js"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
@@ -12,13 +11,10 @@
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "@webpack-cli/serve": "^1.2.1",
     "babel-loader": "^8.1.0",
-    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.0.1",
-    "css-minimizer-webpack-plugin": "^1.1.5",
-    "jquery": "^3.5.1",
-    "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-refresh": "^0.9.0",
     "react-reconciler": "^0.26.1",
     "sass": "^1.26.10",
@@ -37,8 +33,5 @@
     "last 1 version",
     "> 1%",
     "not dead"
-  ],
-  "dependencies": {
-    "react-dom": "^17.0.1"
-  }
+  ]
 }

@@ -1,26 +1,26 @@
 const path = require("path");
 const ReactRefreshPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const devUrl = 'http://localhost:8888/' // This must be the same as your site's URL for development.
+const devUrl = 'http://localhost:8000/' // This must be the same as your site's URL for development.
+const proxyPort = 3003; // Any available port will do. Must match port used in PHP to load assets.
 
 module.exports = {
   mode: 'development',
   entry: {
+    'main': "./assets/main/index.js",
     'vanilla-example': "./assets/vanilla-example/index.js",
     'react-example': "./assets/react-example/index.js"
-  },
-  optimization: {
-    runtimeChunk: "single"
-        // { name: entrypoint => `runtime~${entrypoint.name}`}
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: '[name].js',
     publicPath: 'http://localhost:3003/dist/',
   },
-  devtool: 'eval',
   resolve: {extensions: [".js", ".jsx"]},
+  devtool: 'eval',
+  optimization: {
+    runtimeChunk: "single"
+  },
   module: {
     rules: [
       {
@@ -47,21 +47,22 @@ module.exports = {
     ]
   },
   plugins: [
-    new ReactRefreshPlugin({}),
+    new ReactRefreshPlugin(),
   ],
   devServer: {
-    // hot: true,
-    port: 3003, // Any available port. Must match port used in PHP to load assets.
+    port: proxyPort,
     headers: {"Access-Control-Allow-Origin": "*"},
+    static: [path.resolve(__dirname, "dist")],
     proxy: {
       "/": {
-        target: devUrl, // URL where your wordpress instance runs.
+        target: devUrl,
         secure: false,
         changeOrigin: true,
         autoRewrite: true,
-      },
-    },
-    static: [path.resolve(__dirname, "dist")]
+        headers: {
+          Connection: 'keep-alive'
+        }
+      }
+    }
   }
-}
-;
+};
