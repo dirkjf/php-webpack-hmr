@@ -47,7 +47,7 @@ function enqueueStyle($name)
         echo '<link rel="stylesheet" href="' . enqueueStyle('react-example') . '"/>';
     }
     ?>
-	<title>PHP HMR</title>
+	<title>PHP with Webpack HMR</title>
 </head>
 <body>
 <div class="container">
